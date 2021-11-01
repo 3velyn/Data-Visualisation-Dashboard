@@ -52,9 +52,10 @@ def plot():
     # output_file('CS.html')
     # show(plot)
 
-    script1, div1 = components(plot)
-    cdn_js = CDN.js_files
-    cdn_css = CDN.css_files
+    script, div = components(plot)
+    cdn_js = CDN.js_files[0]
+
+    return render_template('plot.html', script=script, div=div, cdn_js=cdn_js)
 
 if __name__ == '__main__':
     app.run(debug=True)
